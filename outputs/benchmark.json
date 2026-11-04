@@ -1,0 +1,51 @@
+{
+  "runs_per_query": 7,
+  "data_rows": {
+    "raw_accounts": 600,
+    "raw_billing": 10888,
+    "raw_usage": 132952,
+    "raw_tickets": 3694,
+    "account_month_fact": 10888
+  },
+  "queries": {
+    "q1_mrr_by_month": {
+      "raw_median_ms": 9.266,
+      "mart_median_ms": 5.051,
+      "speedup_x": 1.835,
+      "identical_results": true,
+      "rows": 24
+    },
+    "q2_mrr_by_plan_month": {
+      "raw_median_ms": 10.923,
+      "mart_median_ms": 11.454,
+      "speedup_x": 0.954,
+      "identical_results": true,
+      "rows": 72
+    },
+    "q3_usage_by_month": {
+      "raw_median_ms": 113.544,
+      "mart_median_ms": 7.942,
+      "speedup_x": 14.296,
+      "identical_results": true,
+      "rows": 24
+    },
+    "q4_tickets_by_month": {
+      "raw_median_ms": 11.809,
+      "mart_median_ms": 62.434,
+      "speedup_x": 0.189,
+      "identical_results": true,
+      "rows": 24
+    },
+    "q5_top10_latest_month": {
+      "raw_median_ms": 19.673,
+      "mart_median_ms": 22.902,
+      "speedup_x": 0.859,
+      "identical_results": true,
+      "rows": 10
+    }
+  },
+  "total_raw_median_ms": 165.215,
+  "total_mart_median_ms": 109.783,
+  "total_speedup_x": 1.505,
+  "speedup_pct": 33.55
+}

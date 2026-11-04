@@ -1,0 +1,76 @@
+{
+  "tests_run": 14,
+  "tests_passed": 14,
+  "tests": [
+    {
+      "test": "stg_accounts account_id unique",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "stg_billing account+month unique",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact key unique",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact account_id not null",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact month not null",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact mrr not null",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact seats > 0",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "account_month_fact mrr >= 0",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "stg_usage account_id in accounts",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "stg_tickets account_id in accounts",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "stg_billing account_id in accounts",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "fact row count = billing row count",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "retention nrr in [0,2]",
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "test": "retention grr in [0,1] and logo_churn in [0,1]",
+      "failures": 0,
+      "passed": true
+    }
+  ]
+}
