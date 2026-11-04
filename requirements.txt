@@ -1,0 +1,6 @@
+pandas>=2.0
+duckdb>=1.0
+matplotlib>=3.6
+# Optional, for a real dbt run (not installed in the build environment):
+# dbt-core>=1.8
+# dbt-duckdb>=1.8
