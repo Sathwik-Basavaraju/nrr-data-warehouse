@@ -1,0 +1,39 @@
+version: 2
+# Tests run by src/run_duckdb.py (DuckDB runner, since dbt is not
+# installed in this environment). The runner runs exactly these 14
+# tests and writes outputs/tests.json. Do not report a different count.
+#  1 stg_accounts: account_id unique
+#  2 stg_billing: account_id+month unique
+#  3 account_month_fact: account_month_key unique
+#  4 account_month_fact: account_id not null
+#  5 account_month_fact: month not null
+#  6 account_month_fact: mrr not null
+#  7 account_month_fact: seats > 0
+#  8 account_month_fact: mrr >= 0
+#  9 stg_usage: account_id in stg_accounts
+# 10 stg_tickets: account_id in stg_accounts
+# 11 stg_billing: account_id in stg_accounts
+# 12 account_month_fact: row count = stg_billing row count
+# 13 retention_metrics: nrr between 0 and 2
+# 14 retention_metrics: grr between 0 and 1, logo_churn between 0 and 1
+models:
+  - name: stg_accounts
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+  - name: stg_billing
+    columns:
+      - name: account_id
+        tests: [not_null]
+      - name: mrr
+        tests: [not_null]
+  - name: account_month_fact
+    columns:
+      - name: account_month_key
+        tests: [unique, not_null]
+      - name: mrr
+        tests: [not_null]
+  - name: retention_metrics
+    columns:
+      - name: month
+        tests: [unique, not_null]
