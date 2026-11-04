@@ -1,0 +1,13 @@
+name: nrr_data_warehouse
+version: 1.0.0
+config-version: 2
+profile: nrr_data_warehouse
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+models:
+  nrr_data_warehouse:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
